@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GPS Spoofing Detection | Project Overview</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .hero {
+        background: url("/static/images/background.webp") center/cover no-repeat;
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      .section-title {
+        border-bottom: 2px solid #0d6efd;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .project-section {
+        padding: 3rem 0;
+      }
+      .feature-image {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Hero -->
+    <div class="hero">
+      <div class="text-center">
+        <h1>GPS Spoofing Detection System</h1>
+        <p class="lead">
+          Understanding vulnerabilities in satellite navigation and countering
+          malicious signal tampering.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Section 1: What is GPS Spoofing -->
+      <div class="project-section">
+        <h2 class="section-title">What is GPS Spoofing?</h2>
+        <p>
+          GPS Spoofing is a sophisticated technique where false satellite
+          signals are generated to mislead GPS receivers. Spoofing can cause
+          systems — including drones, autonomous vehicles, and ships — to
+          compute false positions and velocities. This manipulation can allow
+          attackers to redirect navigation systems, disrupt autonomous behavior,
+          or hijack vehicles entirely.
+        </p>
+        <p>
+          Unlike jamming, which blocks signals entirely, spoofing subtly feeds
+          fake information to the victim, maintaining the illusion of normalcy.
+          Attackers can either overlay legitimate signals or completely replace
+          them to achieve their objectives.
+        </p>
+        <img
+          src="/static/images/img1.png"
+          alt="GPS Spoofing attack diagram"
+          class="feature-image"
+        />
+      </div>
+
+      <!-- Section 2: Impacts on UAVs & Vehicles -->
+      <div class="project-section">
+        <h2 class="section-title">
+          How Spoofing Impacts UAVs & Autonomous Systems
+        </h2>
+        <p>
+          Modern UAVs (drones) rely on a fusion of sensors — GPS, IMUs (Inertial
+          Measurement Units), vision, and sometimes LiDAR. However, GPS remains
+          the primary global positioning system due to its worldwide coverage.
+          If an attacker successfully broadcasts spoofed signals, the UAV may
+          drift toward false locations, enter no-fly zones, or even lose control
+          entirely.
+        </p>
+        <p>
+          In the real world, incidents of GPS spoofing have caused both civilian
+          and military drones to land unexpectedly or crash. Research presented
+          at the USENIX Security Symposium has shown how a low-cost spoofing
+          setup can be used to mislead drones without touching their software.
+        </p>
+        <img
+          src="/static/images/img2.png"
+          alt="Drone GPS Spoofing"
+          class="feature-image"
+        />
+      </div>
+
+      <!-- Section 3: Real-World Incidents -->
+      <div class="project-section">
+        <h2 class="section-title">Real-World GPS Spoofing Incidents</h2>
+        <p>
+          GPS spoofing has been used in various military and civilian incidents.
+          Ships have reported sudden changes in location while anchored, and
+          multiple UAVs have been reported lost due to GPS manipulation.
+          Military-grade spoofing tools are capable of seamlessly transitioning
+          from authentic signals to spoofed ones, making detection extremely
+          challenging in real-time.
+        </p>
+        <p>
+          Such attacks highlight the need for robust GPS anomaly detection tools
+          — both at the software and hardware level. Organizations such as the
+          US Department of Homeland Security have recognized GPS spoofing as a
+          critical infrastructure threat.
+        </p>
+      </div>
+
+      <!-- Section 4: Defense Mechanisms -->
+      <div class="project-section">
+        <h2 class="section-title">
+          Detecting and Defending Against GPS Spoofing
+        </h2>
+        <p>
+          Defending against GPS spoofing is challenging, especially when the
+          attacker can generate high-quality counterfeit signals. However,
+          detection is possible by observing anomalies in signal parameters such
+          as:
+        </p>
+        <ul>
+          <li>Sudden changes in signal strength (CN0)</li>
+          <li>Carrier phase irregularities</li>
+          <li>Position jumps without corresponding velocity changes</li>
+          <li>Time drift inconsistencies</li>
+        </ul>
+        <p>
+          Combining sensor fusion, AI-driven anomaly detection, and hardware
+          signal authentication offers the best chance of preventing spoofing.
+        </p>
+      </div>
+
+      <!-- Navigation to Detection -->
+      <div class="text-center mb-5">
+        <a href="/predict" class="btn btn-primary btn-lg"
+          >Proceed to GPS Spoofing Detection</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

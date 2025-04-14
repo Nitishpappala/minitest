@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPS Spoofing Detection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      .feature-item {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4 text-center">GPS Spoofing Detection System</h2>
+      <div class="card">
+        <div class="card-body">
+          <form action="/predict" method="post">
+            <div class="feature-grid mb-4">
+              <div class="feature-item">
+                <label class="form-label">PRN (Pseudo Random Number)</label>
+                <input type="number" step="any" class="form-control" name="PRN" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">DO (Doppler Offset)</label>
+                <input type="number" step="any" class="form-control" name="DO" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">PD (Pseudorange)</label>
+                <input type="number" step="any" class="form-control" name="PD" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">CP (Carrier Phase)</label>
+                <input type="number" step="any" class="form-control" name="CP" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">EC (Error Code)</label>
+                <input type="number" step="any" class="form-control" name="EC" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">LC (Lock Count)</label>
+                <input type="number" step="any" class="form-control" name="LC" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">PC (Phase Count)</label>
+                <input type="number" step="any" class="form-control" name="PC" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">PIP (Phase Integer Part)</label>
+                <input type="number" step="any" class="form-control" name="PIP" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">PQP (Phase Quality Part)</label>
+                <input type="number" step="any" class="form-control" name="PQP" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">TCD (Time Count Delta)</label>
+                <input type="number" step="any" class="form-control" name="TCD" required />
+              </div>
+              <div class="feature-item">
+                <label class="form-label">CN0 (Carrier-to-Noise Ratio)</label>
+                <input type="number" step="any" class="form-control" name="CN0" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Detect Spoofing</button>
+          </form>
+
+          {% if prediction_text %}
+          <div class="alert alert-info mt-4" role="alert">
+            <h4 class="alert-heading text-center">Result</h4>
+            <p class="mb-0 text-center">{{ prediction_text }}</p>
+            {% if confidence %}
+            <p class="mb-0 text-center">{{ confidence }}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
