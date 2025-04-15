@@ -5,7 +5,7 @@ from sklearn.preprocessing import RobustScaler
 import joblib
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='assets')
 
 # Load model and scaler
 model = xgb.Booster()
